@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('getConver','HomeController@getConver')->name('getConver');
+Route::get('newConver','HomeController@newConver')->name('newConver');
+
+Route::get('getChat/{idConversacion}','HomeController@getChat')->name('getChat/{idConversacion}');
+Route::post('storeChat','HomeController@storeChat')->name('storeChat');
