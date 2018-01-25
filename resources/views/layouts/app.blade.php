@@ -73,8 +73,20 @@
 
         @yield('content')
     </div>
+    
+    {{-- Jquery --}}
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <!-- Vuejs & Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Scripts -->   
+    <script src="{{asset('js/app.js')}}"></script>
+    @yield('js')
+
 </body>
 </html>

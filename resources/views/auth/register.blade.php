@@ -1,6 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+  /* Always set the map height explicitly to define the size of the div
+   * element that contains the map. */
+  #map {
+    height: 50%;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
+<div id="map"></div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -52,6 +69,10 @@
                                 @endif
                             </div>
                         </div>
+                    
+                        {{-- Agregamos Oculto la informacion de ubicacion --}}
+                        <input type="hidden" id="latitude" name="lat">
+                        <input type="hidden" id="longitud" name="lng">
 
                         <div class="form-group">
                             <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
@@ -74,4 +95,13 @@
         </div>
     </div>
 </div>
+
+
+{{-- Llamamos el code de Google Maps --}}
+<script src="{{ asset('js/ubicacion.js') }}"></script>
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZzaKxpVJpAbAnbCaFaXas30baBoMTBq0&callback=initMap">
+</script>
+
 @endsection
